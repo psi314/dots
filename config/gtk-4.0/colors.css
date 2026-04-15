@@ -1,0 +1,46 @@
+/* Matugen Generated */
+
+@define-color accent_color #ffb1c1;
+@define-color accent_bg_color #ffb1c1;
+@define-color accent_fg_color #551d2c;
+@define-color destructive_color #ffb4ab;
+@define-color destructive_bg_color #93000a;
+@define-color destructive_fg_color #ffdad6;
+@define-color success_color #e4bdc3;
+@define-color success_bg_color #5b3f45;
+@define-color success_fg_color #ffd9df;
+@define-color warning_color #ecbe91;
+@define-color warning_bg_color #60401d;
+@define-color warning_fg_color #ffdcbd;
+@define-color error_color #ffb4ab;
+@define-color error_bg_color #93000a;
+@define-color error_fg_color #ffdad6;
+@define-color window_bg_color #22191b;
+@define-color window_fg_color #efdee0;
+@define-color view_bg_color #22191b;
+@define-color view_fg_color #efdee0;
+@define-color headerbar_bg_color @window_bg_color;
+@define-color headerbar_fg_color @window_fg_color;
+@define-color headerbar_border_color @window_bg_color;
+@define-color headerbar_backdrop_color @window_bg_color;
+@define-color headerbar_shade_color @window_bg_color;
+@define-color card_bg_color #261d1f;
+@define-color card_fg_color #efdee0;
+@define-color card_shade_color rgba(0, 0, 0, 0.05);
+@define-color dialog_bg_color @card_bg_color;
+@define-color dialog_fg_color @card_fg_color;
+@define-color popover_bg_color @card_bg_color;
+@define-color popover_fg_color @card_fg_color;
+@define-color shade_color rgba(0, 0, 0, 0.35);
+@define-color sidebar_bg_color #140c0e;
+@define-color secondary_sidebar_bg_color @sidebar_bg_color;
+@define-color sidebar_backdrop_color @sidebar_bg_color;
+@define-color secondary_sidebar_backdrop_color @sidebar_bg_color;
+
+/* These are the legacy variables many apps still use for selection */
+@define-color theme_selected_bg_color #713342;
+@define-color theme_selected_fg_color #ffd9df;
+
+/* Specific for Libadwaita/GTK4 apps */
+@define-color selection_bg_color @accent_bg_color;
+@define-color selection_fg_color @accent_fg_color;

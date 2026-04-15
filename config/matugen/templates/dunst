@@ -1,0 +1,37 @@
+[global]
+monitor = 0
+font = JetBrains Mono 11
+offset = (10,10)
+icon_theme = Papirus-Dark
+enable_recursive_icon_lookup = true
+stack_duplicate = true
+background = "#403a3aCC"
+foreground = "#ebdbb2"
+separator_color = frame
+frame_color = "{{colors.primary.default.hex}}"
+highlight = "{{colors.primary.default.hex}}"
+separator_color= "{{colors.outline.default.hex}}"
+
+[espeak]
+summary = "*"
+script = $HOME/.config/dunst/alert
+
+[urgency_low]
+timeout = 3
+background = "{{colors.surface.default.hex}}"
+foreground = "{{colors.on_surface.default.hex}}"
+highlight = "{{colors.primary_container.default.hex}}"
+
+
+[urgency_normal]
+timeout = 6
+background = "{{colors.surface.default.hex}}"
+foreground = "{{colors.on_surface.default.hex}}"
+highlight = "{{colors.primary_container.default.hex}}"
+
+[urgency_critical]
+timeout = 0
+background = "{{colors.surface.default.hex}}"
+foreground = "{{colors.on_surface.default.hex}}"
+highlight = "{{colors.error.default.hex}}"
+

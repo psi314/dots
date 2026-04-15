@@ -1,0 +1,18 @@
+[general]
+import = ["colors.toml"]
+
+[terminal]
+shell="/bin/fish"
+
+[cursor]
+style={shape="Beam",blinking="Always"}
+unfocused_hollow=false
+
+[font]
+normal = { family = "JetBrains Mono NL", style = "Regular" }
+size=11
+
+[window]
+padding={x=5,y=5}
+
+

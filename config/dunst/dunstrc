@@ -1,0 +1,37 @@
+[global]
+monitor = 0
+font = JetBrains Mono 11
+offset = (10,10)
+icon_theme = Papirus-Dark
+enable_recursive_icon_lookup = true
+stack_duplicate = true
+background = "#403a3aCC"
+foreground = "#ebdbb2"
+separator_color = frame
+frame_color = "#ffb1c1"
+highlight = "#ffb1c1"
+separator_color= "#9f8c8f"
+
+[espeak]
+summary = "*"
+script = $HOME/.config/dunst/alert
+
+[urgency_low]
+timeout = 3
+background = "#191113"
+foreground = "#efdee0"
+highlight = "#713342"
+
+
+[urgency_normal]
+timeout = 6
+background = "#191113"
+foreground = "#efdee0"
+highlight = "#713342"
+
+[urgency_critical]
+timeout = 0
+background = "#191113"
+foreground = "#efdee0"
+highlight = "#ffb4ab"
+

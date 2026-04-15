@@ -1,0 +1,42 @@
+@import "colors.rasi"
+
+configuration {
+    font: "JetBrains Mono 11";    
+	show-icons: true;
+    modes: [drun, filebrowser];
+}
+
+* {
+    background:                  @primary-container;
+    alternate-normal-background: @primary-container;
+    foreground:                  @on-primary-container;
+
+}
+
+element {
+    padding: 10px;
+}
+
+window {
+    background-color : @surface;
+    width: 30%;
+}
+
+listview {
+    lines: 5;
+    spacing: 1px;
+    scrollbar: false;
+}
+
+element selected.normal {
+    background-color: @primary-dim;
+    text-color: @on-primary;
+}
+
+entry {
+    text-color : @on-primary-container;
+}
+
+prompt {
+    text-color: @primary-dim; 
+}

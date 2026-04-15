@@ -1,0 +1,56 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 20,
+
+    "spacing": 4,
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "hyprland/window"
+     ],
+    "modules-right": [
+        "wireplumber",
+        "battery",
+        "clock",
+        "tray"
+    ],
+
+    "hyprland/workspaces": {
+        "persistent-workspaces": {
+            "*": 3
+        }
+    },
+
+    "hyprland/window" : {
+        "icon" : true,
+        "icon-size" : 18
+    },
+    "clock": {
+        "format": "{:%H:%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><big>{calendar}</big></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+
+    "battery": {
+        "format": "{capacity}% 󰁹",
+        "format-warning": "{capacity}% 󰁺",
+        "format-critical": "{capacity}% 󰂃",
+        "format-charging" : "{capacity}% CHG",
+        "states": {
+            "warning": 20,
+            "critical": 10
+        },
+        "events": {
+            "on-discharging-warning": "notify-send -u critical 'Plug in Charger !'",
+            "on-charging-80" : "notify-send -u critical 'Remove the charger !'"
+        }
+    },
+
+    "wireplumber": {
+        "format": "{volume}%  ",
+        "format-bluetooth" :"{volume}%  ",
+        "format-muted": "MUTED  "
+    }
+}

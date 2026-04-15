@@ -1,0 +1,60 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 20,
+
+    "spacing": 4,
+    "modules-left": [
+        "dwl/tags"
+    ],
+    "modules-center": [
+	    "dwl/window"
+     ],
+    "modules-right": [
+        "wireplumber",
+        "battery",
+        "clock",
+        "tray"
+    ],
+    "dwl/tags" : {
+       "num-tags": 5
+    },
+    "dwl/window" : {
+        "format" : "{app_id}",
+	    "icon" : true,
+        "max-length" : 60,
+	    "icon-size" : 18,
+        "tooltip" : false
+    },
+
+    "clock": {
+        "format": "{:%H:%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><big>{calendar}</big></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+
+    "battery": {
+        "format": "{capacity}% 󰁹",
+        "format-warning": "{capacity}% 󰁺",
+        "format-critical": "{capacity}% 󰂃",
+        "format-charging" : "{capacity}% CHG",
+        "states": {
+            "warning": 20,
+            "critical": 10
+        },
+        "events": {
+            "on-discharging-warning": "notify-send -u critical 'Plug in Charger !'",
+            "on-charging-80" : "notify-send -u critical 'Remove the charger !'"
+        }
+    },
+
+    "tray": {
+        "spacing": 2
+    },
+
+    "wireplumber": {
+        "format": "{volume}%  ",
+        "format-bluetooth" :"{volume}%  ",
+        "format-muted": "MUTED  "
+    }
+}
