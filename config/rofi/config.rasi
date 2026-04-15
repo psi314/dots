@@ -1,7 +1,7 @@
 @import "colors.rasi"
 
 configuration {
-    font: "JetBrains Mono 11";    
+    font: "JetBrains Mono 10";    
 	show-icons: true;
     modes: [drun, filebrowser];
 }
@@ -14,7 +14,7 @@ configuration {
 }
 
 element {
-    padding: 10px;
+    padding: 8px;
 }
 
 window {
