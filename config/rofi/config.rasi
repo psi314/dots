@@ -1,15 +1,15 @@
 @import "colors.rasi"
 
 configuration {
-    font: "JetBrains Mono 10";    
+    font: "JetBrains Mono 11";    
 	show-icons: true;
     modes: [drun, filebrowser];
 }
 
 * {
-    background:                  @primary-container;
-    alternate-normal-background: @primary-container;
-    foreground:                  @on-primary-container;
+    background:                  @primary;
+    alternate-normal-background: @primary;
+    foreground:                  @on-primary;
 
 }
 
@@ -23,14 +23,14 @@ window {
 }
 
 listview {
-    lines: 5;
+    lines: 6;
     spacing: 1px;
     scrollbar: false;
 }
 
 element selected.normal {
-    background-color: @primary-dim;
-    text-color: @on-primary;
+    background-color: @inverse-primary;
+    text-color: @on-primary-container;
 }
 
 entry {
@@ -38,5 +38,5 @@ entry {
 }
 
 prompt {
-    text-color: @primary-dim; 
+    text-color: @on-primary-container; 
 }
