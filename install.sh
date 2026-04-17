@@ -1,7 +1,19 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+if [[ $# -lt 2 ]]; then
+    echo "Usage: $0 <username> <timezone>" >&2
+    echo "Example: $0 jim America/New_York" >&2
+    exit 1
+fi
+
 USERNAME="$1"
+TIMEZONE="$2"
+
+if [[ ! -e "/usr/share/zoneinfo/$TIMEZONE" ]]; then
+    echo "Error: timezone '$TIMEZONE' does not exist in /usr/share/zoneinfo" >&2
+    exit 1
+fi
 
 IMP_PKGS=(
     "base-devel"
@@ -133,27 +145,6 @@ disable_service() {
     fi
 }
 
-install_systemdboot() {
-    bootctl install
-    
-    local root_uuid
-    root_uuid=$(blkid -o value -s UUID "$(findmnt -n -o SOURCE /)")
-    
-    printf '%s\n' \
-        "title   Arch Linux" \
-        "linux   /vmlinuz-linux" \
-        "initrd  /intel-ucode.img" \
-        "initrd  /initramfs-linux.img" \
-        "options root=UUID=$root_uuid rw nvme_core.default_ps_max_latency_us=0 loglevel=3 8250.probe_rsa=0" \
-        > /boot/loader/entries/arch.conf
-    
-    printf '%s\n' \
-        "timeout 3" \
-        "console-mode auto" \
-        "default arch" \
-        > /boot/loader/loader.conf
-}
-
 create_user() {
     useradd -m -G wheel,audio,video "$USERNAME"
     echo "Please set a password for the new user:"
@@ -168,8 +159,29 @@ setup_locales() {
     echo "KEYMAP=us" | tee /etc/vconsole.conf
 }
 
+setup_systemdboot() {
+    bootctl install
+    
+    local root_uuid
+    root_uuid=$(blkid -o value -s UUID "$(findmnt -n -o SOURCE /)")
+    
+    printf '%s\n' \
+        "title   Arch Linux" \
+        "linux   /vmlinuz-linux" \
+        "initrd  /intel-ucode.img" \
+        "initrd  /initramfs-linux.img" \
+        "options root=UUID=$root_uuid rw nvme_core.default_ps_max_latency_us=0 loglevel=3" \
+        > /boot/loader/entries/arch.conf
+    
+    printf '%s\n' \
+        "timeout 3" \
+        "console-mode auto" \
+        "default arch" \
+        > /boot/loader/loader.conf
+}
+
 setup_timezone() {
-    ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
+    timedatectl set-timezone "$TIMEZONE"
     hwclock --systohc
 }
 
@@ -212,7 +224,7 @@ main() {
     install_packages "${IMP_PKGS[@]}"
     setup_locales
     setup_timezone
-    install_systemdboot
+    setup_systemdboot
     disable_service "systemd-networkd.service"
     disable_service "systemd-userdbd.service"
     disable_service "systemd-networkd.socket"
