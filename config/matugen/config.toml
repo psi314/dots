@@ -30,10 +30,19 @@ input_path = '~/.config/matugen/templates/dunst'
 output_path = '~/.config/dunst/dunstrc'
 post_hook = 'dunstctl reload'
 
-[templates.waybar]
+[templates.waybar-css]
 input_path = '~/.config/matugen/templates/waybar.css'
 output_path = '~/.config/waybar/colors.css'
 post_hook = 'pkill -SIGUSR2 waybar'
+index=1
+
+[templates.waybar-config]
+input_path = '~/.config/matugen/templates/waybar-config.jsonc'
+output_path = '~/.config/waybar/config.jsonc'
+
+[templates.waybar-config-hypr]
+input_path = '~/.config/matugen/templates/waybar-config-hypr.jsonc'
+output_path = '~/.config/waybar/config-hypr.jsonc'
 
 [templates.Obsidian]
 input_path = '~/.config/matugen/templates/obsidian.json'

@@ -1,0 +1,59 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 20,
+    "margin" : 5,
+    "modules-left": [
+        "ext/workspaces"
+    ],
+    "modules-center": [
+        "dwl/window"
+    ],
+    "modules-right": [
+        "wireplumber",
+        "battery",
+        "clock",
+        "tray"
+    ],
+    "ext/workspaces": {
+        "format": "{icon}",
+        "format-icons" : {
+            "active": "",
+            "default": ""
+        }
+    },
+    "dwl/window": {
+        "format": "{app_id}",
+        "icon": true,
+        "max-length": 60,
+        "icon-size": 18,
+        "tooltip": false
+    },
+    "clock": {
+        "format": "<span color='{{colors.on_primary.default.hex}}' bgcolor='{{colors.primary.default.hex}}' ><b> 󰸗 </b></span> {:%H:%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><big>{calendar}</big></tt>",
+        "format-alt": "<span color='{{colors.on_primary.default.hex}}' bgcolor='{{colors.primary.default.hex}}' ><b> 󰸗 </b></span> {:%Y-%m-%d}"
+    },
+    "battery": {
+        "format": "<span color='{{colors.on_primary.default.hex}}' bgcolor='{{colors.primary.default.hex}}' > 󰁹 </span> {capacity}%",
+        "format-warning": "<span color='{{colors.on_primary.default.hex}}' bgcolor='{{colors.primary.default.hex}}' > 󰁺 </span> {capacity}%",
+        "format-critical": "<span color='{{colors.on_error.default.hex}}' bgcolor='{{colors.error.default.hex}}' > 󰂃 </span> {capacity}%",
+        "format-charging": "<span color='{{colors.on_primary.default.hex}}' bgcolor='{{colors.primary.default.hex}}' > 󱐌 </span> {capacity}%",
+        "states": {
+            "warning": 20,
+            "critical": 10
+        },
+        "events": {
+            "on-discharging-warning": "notify-send -u critical 'Plug in Charger !'",
+            "on-charging-80": "notify-send -u critical 'Remove the charger !'"
+        }
+    },
+    "tray": {
+        "spacing": 2
+    },
+    "wireplumber": {
+        "format": "<span color='{{colors.on_primary.default.hex}}' bgcolor='{{colors.primary.default.hex}}' >   </span> {volume}%",
+        "format-bluetooth": "<span color='{{colors.on_primary.default.hex}}' bgcolor='{{colors.primary.default.hex}}' >  </span> {volume}%",
+        "format-muted": "<span color='{{colors.on_error.default.hex}}' bgcolor='{{colors.error.default.hex}}' >  </span>"
+    }
+}

@@ -1,0 +1,57 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 20,
+
+    "spacing": 4,
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "hyprland/window"
+     ],
+    "modules-right": [
+        "wireplumber",
+        "battery",
+        "clock",
+        "tray"
+    ],
+
+    "hyprland/workspaces": {
+        "persistent-workspaces": {
+            "*": 3
+        }
+    },
+
+    "hyprland/window" : {
+	"format":"{initialTitle}",
+        "icon" : true,
+        "icon-size" : 18
+    },
+    "clock": {
+        "format": "<span color='{{colors.on_primary.default.hex}}' bgcolor='{{colors.primary.default.hex}}' ><b> 󰃮 </b></span> {:%H:%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><big>{calendar}</big></tt>",
+        "format-alt": "<span color='{{colors.on_primary.default.hex}}' bgcolor='{{colors.primary.default.hex}}' ><b> 󰃮 </b></span> {:%Y-%m-%d}"
+    },
+
+    "battery": {
+        "format": "<span color='{{colors.on_primary.default.hex}}' bgcolor='{{colors.primary.default.hex}}' > 󰁹 </span> {capacity}%",
+        "format-warning": "<span color='{{colors.on_primary.default.hex}}' bgcolor='{{colors.primary.default.hex}}' > 󰁺 </span> {capacity}%",
+        "format-critical": "<span color='{{colors.on_error.default.hex}}' bgcolor='{{colors.error.default.hex}}' > 󰂃 </span> {capacity}%",
+        "format-charging" : "<span color='{{colors.on_primary.default.hex}}' bgcolor='{{colors.primary.default.hex}}' > 󱐌 </span> {capacity}%",
+        "states": {
+            "warning": 20,
+            "critical": 10
+        },
+        "events": {
+            "on-discharging-warning": "notify-send -u critical 'Plug in Charger !'",
+            "on-charging-80" : "notify-send -u critical 'Remove the charger !'"
+        }
+    },
+
+    "wireplumber": {
+        "format": "<span color='{{colors.on_primary.default.hex}}' bgcolor='{{colors.primary.default.hex}}' > ` </span> {volume}%",
+        "format-bluetooth" :"<span color='{{colors.on_primary.default.hex}}' bgcolor='{{colors.primary.default.hex}}' >  </span> {volume}%",
+        "format-muted": "<span color='{{colors.on_error.default.hex}}' bgcolor='{{colors.error.default.hex}}' >  </span>"
+    }
+}
