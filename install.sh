@@ -159,29 +159,13 @@ setup_locales() {
     echo "KEYMAP=us" | tee /etc/vconsole.conf
 }
 
-setup_systemdboot() {
-    bootctl install
-    
-    local root_uuid
-    root_uuid=$(blkid -o value -s UUID "$(findmnt -n -o SOURCE /)")
-    
-    printf '%s\n' \
-        "title   Arch Linux" \
-        "linux   /vmlinuz-linux" \
-        "initrd  /intel-ucode.img" \
-        "initrd  /initramfs-linux.img" \
-        "options root=UUID=$root_uuid rw nvme_core.default_ps_max_latency_us=0 loglevel=3" \
-        > /boot/loader/entries/arch.conf
-    
-    printf '%s\n' \
-        "timeout 3" \
-        "console-mode auto" \
-        "default arch" \
-        > /boot/loader/loader.conf
+setup_grub() {
+    grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
+    grub-mkconfig -o /boot/grub/grub.cfg
 }
 
 setup_timezone() {
-    timedatectl set-timezone "$TIMEZONE"
+    ln -sf "/usr/share/zoneinfo/$TIMEZONE" /etc/localtime
     hwclock --systohc
 }
 
@@ -224,7 +208,7 @@ main() {
     install_packages "${IMP_PKGS[@]}"
     setup_locales
     setup_timezone
-    setup_systemdboot
+    setup_grub
     disable_service "systemd-networkd.service"
     disable_service "systemd-userdbd.service"
     disable_service "systemd-networkd.socket"
