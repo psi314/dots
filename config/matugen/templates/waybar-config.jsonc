@@ -52,8 +52,8 @@
         "spacing": 2
     },
     "wireplumber": {
-        "format": "<span color='{{colors.on_primary.default.hex}}' bgcolor='{{colors.primary.default.hex}}' >   </span> {volume}%",
-        "format-bluetooth": "<span color='{{colors.on_primary.default.hex}}' bgcolor='{{colors.primary.default.hex}}' >  </span> {volume}%",
-        "format-muted": "<span color='{{colors.on_error.default.hex}}' bgcolor='{{colors.error.default.hex}}' >  </span>"
+        "format": "<span color='{{colors.on_primary.default.hex}}' bgcolor='{{colors.primary.default.hex}}' > ` </span> {volume}%",
+        "format-bluetooth" :"<span color='{{colors.on_primary.default.hex}}' bgcolor='{{colors.primary.default.hex}}' >   </span> {volume}%",
+        "format-muted": "<span color='{{colors.on_error.default.hex}}' bgcolor='{{colors.error.default.hex}}' >   </span> MUTE"
     }
 }

@@ -9,7 +9,7 @@ style={shape="Beam",blinking="Always"}
 unfocused_hollow=false
 
 [font]
-normal = { family = "JetBrains Mono NL", style = "Regular" }
+normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
 size=11
 
 [window]

@@ -1,7 +1,7 @@
 @import "colors.rasi"
 
 configuration {
-    font: "JetBrains Mono 11";    
+    font: "JetBrainsMono Nerd Font 11";    
 	show-icons: true;
     modes: [drun, filebrowser];
 }

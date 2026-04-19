@@ -1,6 +1,6 @@
 [global]
 monitor = 0
-font = JetBrains Mono 11
+font = JetBrainsMono Nerd Font 11
 offset = (10,10)
 icon_theme = Papirus-Dark
 enable_recursive_icon_lookup = true
