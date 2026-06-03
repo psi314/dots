@@ -1,0 +1,8 @@
+hl.on("hyprland.start", function ()
+     hl.exec_cmd("noctalia")
+     hl.exec_cmd("/usr/lib/xdg-desktop-portal")
+     hl.exec_cmd("/usr/lib/xdg-desktop-portal-gtk")
+     hl.exec_cmd("/usr/lib/xdg-desktop-portal-wlr")
+     hl.exec_cmd("kdeconnectd")
+     hl.exec_cmd("wl-clip-persist --clipboard regular")
+ end)

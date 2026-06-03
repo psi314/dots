@@ -1,9 +1,10 @@
 [bar.default]
 capsule = true
+capsule_opacity = 0.75
 margin_ends = 15
 padding = 15
-scale = 1.25
-thickness = 45
+scale = 1.0
+thickness = 35
 start = [ "clock", "group:g2", "media" ]
 center = [ "group:g3" ]
 end = [ "control-center", "notifications", "clipboard", "network", "bluetooth", "volume", "brightness", "battery", "tray" ]
@@ -21,13 +22,12 @@ end = [ "control-center", "notifications", "clipboard", "network", "bluetooth", 
     members = [ "cpu", "temp", "ram" ]
     opacity = 0.5
     padding = 6.0
-    radius = 8.0
 
     [[bar.default.capsule_group]]
     fill = "surface_variant"
     id = "g3"
     members = [ "active_window", "workspaces" ]
-    opacity = 0.5
+    opacity = 0.0
     padding = 6.0
 
 [idle]
@@ -51,11 +51,18 @@ behavior_order = [ "lock", "screen-off", "suspend" ]
 [shell]
 avatar_path = "/home/pranjal/.face"
 polkit_agent = true
-settings_show_advanced = true
+settings_show_advanced = false
 telemetry_enabled = false
 font_family = "Nunito"
 password_style = "random"
 ui_scale = 1.25
+
+[location]
+auto_locate = true
+
+[theme]
+builtin = "Catppuccin"
+wallpaper_scheme = "Catppuccin"
 
 [theme.templates]
 builtin_ids = [ "gtk3", "gtk4", "kitty", "kcolorscheme", "mango" ]
@@ -65,8 +72,12 @@ directory = "/home/pranjal/Pictures/walls"
 
 [widget.active_window]
 display = "icon_only"
-icon_size = 18.0
+icon_size = 16.0
 min_length = 0.0
+
+[widget.workspaces]
+minimal = true
+scale = 1.25
 
 [widget.bluetooth]
 show_label = true
@@ -75,4 +86,13 @@ show_label = true
 title_scroll = "always"
 
 [widget.network]
+show_label = false
+
+[widget.cpu]
+show_label = false
+
+[widget.ram]
+show_label = false
+
+[widget.temp]
 show_label = false
