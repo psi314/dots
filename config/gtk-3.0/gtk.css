@@ -1,2 +1,6 @@
-@import 'colors.css';
+@import url("noctalia.css");
 
+.standard-view .view:selected,
+.standard-view .view:selected:focus {
+    color: #222222;
+}

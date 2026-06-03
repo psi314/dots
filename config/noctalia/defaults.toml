@@ -1,0 +1,78 @@
+[bar.default]
+capsule = true
+margin_ends = 15
+padding = 15
+scale = 1.25
+thickness = 45
+start = [ "clock", "group:g2", "media" ]
+center = [ "group:g3" ]
+end = [ "control-center", "notifications", "clipboard", "network", "bluetooth", "volume", "brightness", "battery", "tray" ]
+
+[[bar.default.capsule_group]]
+    fill = "surface_variant"
+    id = "g1"
+    members = [ "cpu", "ram", "temp" ]
+    opacity = 1.0
+    padding = 6.0
+
+    [[bar.default.capsule_group]]
+    fill = "surface_variant"
+    id = "g2"
+    members = [ "cpu", "temp", "ram" ]
+    opacity = 0.5
+    padding = 6.0
+    radius = 8.0
+
+    [[bar.default.capsule_group]]
+    fill = "surface_variant"
+    id = "g3"
+    members = [ "active_window", "workspaces" ]
+    opacity = 0.5
+    padding = 6.0
+
+[idle]
+behavior_order = [ "lock", "screen-off", "suspend" ]
+
+    [idle.behavior.lock]
+    action = "lock"
+    enabled = true
+    timeout = 300
+
+    [idle.behavior.screen-off]
+    action = "screen_off"
+    enabled = true
+    timeout = 360
+
+    [idle.behavior.suspend]
+    action = "lock_and_suspend"
+    enabled = true
+    timeout = 600
+
+[shell]
+avatar_path = "/home/pranjal/.face"
+polkit_agent = true
+settings_show_advanced = true
+telemetry_enabled = false
+font_family = "Nunito"
+password_style = "random"
+ui_scale = 1.25
+
+[theme.templates]
+builtin_ids = [ "gtk3", "gtk4", "kitty", "kcolorscheme", "mango" ]
+
+[wallpaper]
+directory = "/home/pranjal/Pictures/walls"
+
+[widget.active_window]
+display = "icon_only"
+icon_size = 18.0
+min_length = 0.0
+
+[widget.bluetooth]
+show_label = true
+
+[widget.media]
+title_scroll = "always"
+
+[widget.network]
+show_label = false

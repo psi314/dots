@@ -1,0 +1,3 @@
+[theme.templates.user.browser-homepage]
+input_path  = "~/.config/noctalia/templates/css-colors.css"
+output_path = "~/Projects/home-page/colors.css"
