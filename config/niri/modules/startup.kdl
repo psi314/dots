@@ -1,0 +1,7 @@
+
+spawn-at-startup "noctalia"
+spawn-at-startup "xdg-desktop-portal"
+spawn-at-startup "xdg-desktop-portal-gtk"
+spawn-at-startup "kdeconnectd"
+spawn-sh-at-startup "wl-clip-persist --clipboard regular"
+spawn-sh-at-startup "python3 ~/Scripts/niri_tile_to_n.py -n 3"

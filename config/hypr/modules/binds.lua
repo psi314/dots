@@ -36,7 +36,6 @@ hl.bind(mainMod .. " + return", spawn("kitty --single-instance"))
 
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
-hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({mode=maximized}))
 hl.bind(mainMod .. " + P", hl.dsp.window.float())
 hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen_state({internal = 0, client = 2 , action = "toggle" }))
 
