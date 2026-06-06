@@ -4,7 +4,7 @@ binds {
 
     Mod+Return { spawn "kitty"; }
     Mod+E { spawn "thunar"; }
-    Mod+W { spawn "firefox"; }
+    Mod+W { spawn "brave-origin"; }
     
     // Noctalia
 
@@ -99,4 +99,10 @@ binds {
 
     Mod+Shift+X { quit; }
     Mod+Shift+P { power-off-monitors; }
+
+    MouseMiddle  { maximize-column; }
+}
+
+switch-events { 
+  lid-close { spawn "noctalia" "msg" "session" "lock-and-suspend"; } 
 }

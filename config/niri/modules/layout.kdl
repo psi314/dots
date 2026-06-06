@@ -1,3 +1,5 @@
+prefer-no-csd
+
 layout {
     gaps 10
 
@@ -11,7 +13,7 @@ layout {
     default-column-width { proportion 0.5; }
 
     focus-ring {
-        width 2
+        width 4
     }
 
     shadow {
@@ -21,4 +23,9 @@ layout {
         offset x=0 y=5
         color "#0000"
     }
+}
+
+window-rule {
+    geometry-corner-radius 8
+    clip-to-geometry true
 }

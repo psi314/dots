@@ -28,7 +28,7 @@ hl.bind(mainMod .. " + SHIFT + S", spawn("noctalia msg screenshot-region pick"))
 
 -- === Apps Bindings ===
 
-hl.bind(mainMod .. " + W", spawn("firefox"))
+hl.bind(mainMod .. " + W", spawn("brave-origin"))
 hl.bind(mainMod .. " + E", spawn("thunar"))
 hl.bind(mainMod .. " + return", spawn("kitty --single-instance"))
 

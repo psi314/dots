@@ -1,27 +1,26 @@
 input {
-	
+    focus-follows-mouse	
     touchpad {
         tap
+        dwt
         natural-scroll
+        middle-emulation
     }
 }
 
 output "eDP-1" {
-    scale 1.25
+    scale 1.5
 }
 
-
-prefer-no-csd
-
-
-animations {
-    slowdown 0.75
+hotkey-overlay {
+    skip-at-startup
 }
-
 
 include "modules/binds.kdl"
+include "modules/startup.kdl"
 include "modules/layout.kdl"
 include "modules/appearence.kdl"
-include "modules/startup.kdl"
+include "modules/animations.kdl"
+
 
 include "noctalia.kdl"
