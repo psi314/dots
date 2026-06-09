@@ -19,7 +19,6 @@ hotkey-overlay {
 include "modules/binds.kdl"
 include "modules/startup.kdl"
 include "modules/layout.kdl"
-include "modules/appearence.kdl"
 include "modules/animations.kdl"
 
 

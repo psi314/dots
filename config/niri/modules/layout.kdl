@@ -13,7 +13,7 @@ layout {
     default-column-width { proportion 0.5; }
 
     focus-ring {
-        width 4
+        width 2
     }
 
     shadow {
@@ -26,6 +26,11 @@ layout {
 }
 
 window-rule {
-    geometry-corner-radius 8
+    geometry-corner-radius 0
     clip-to-geometry true
+}
+
+cursor {
+    xcursor-theme "breeze_cursors"
+    xcursor-size 24
 }

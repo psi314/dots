@@ -1,7 +1,10 @@
 [bar.default]
 capsule = true
 capsule_opacity = 0.75
-margin_ends = 15
+capsule_radius = 2
+margin_ends = 0
+margin_edge = 0
+radius = 0
 padding = 15
 scale = 1.0
 thickness = 35
@@ -25,10 +28,22 @@ end = [ "control-center", "notifications", "clipboard", "network", "bluetooth", 
 
     [[bar.default.capsule_group]]
     fill = "surface_variant"
+    border = "primary"
     id = "g3"
     members = [ "active_window", "workspaces" ]
     opacity = 0.0
     padding = 6.0
+
+[dock]
+auto_hide = true
+background_opacity = 1
+enabled = true
+icon_size = 32
+launcher_icon = "noctalia"
+launcher_position = "start"
+magnification = false
+pinned = [ "brave-origin", "anki", "org.kde.kdenlive", "kitty" ]
+show_dots = true
 
 [idle]
 behavior_order = [ "lock", "screen-off", "suspend" ]
@@ -53,9 +68,12 @@ avatar_path = "/home/pranjal/.face"
 polkit_agent = true
 settings_show_advanced = false
 telemetry_enabled = false
-font_family = "Nunito"
+font_family = "FiraCode Nerd Font"
 password_style = "random"
-ui_scale = 1.25
+ui_scale = 1
+
+    [shell.screenshot]
+    directory = "/home/pranjal/Pictures/Screenshots"
 
 [location]
 auto_locate = true
@@ -65,14 +83,16 @@ builtin = "Catppuccin"
 wallpaper_scheme = "Catppuccin"
 
 [theme.templates]
-builtin_ids = [ "gtk3", "gtk4", "kitty", "kcolorscheme", "mango" ]
+builtin_ids = [ "gtk3", "gtk4", "kitty", "kcolorscheme", "mango", "niri" ]
+enable_community_templates = false
 
 [wallpaper]
 directory = "/home/pranjal/Pictures/walls"
+transition_on_startup = true
 
 [widget.active_window]
 display = "icon_only"
-icon_size = 16.0
+icon_size = 22.0
 min_length = 0.0
 
 [widget.workspaces]
@@ -84,6 +104,7 @@ show_label = true
 
 [widget.media]
 title_scroll = "always"
+hide_when_no_media = true
 
 [widget.network]
 show_label = false
@@ -96,3 +117,31 @@ show_label = false
 
 [widget.temp]
 show_label = false
+
+[calendar]
+enabled = true
+
+    [calendar.account.personal_google]
+    name = "Calendar"
+    type = "google"
+
+
+[desktop_widgets]
+widget_order = [ "desktop-widget-watermark" ]
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget.desktop-widget-watermark]
+    box_height = 64.0
+    box_width = 288.0
+    cx = 1264.0
+    cy = 896.0
+    type = "label"
+
+        [desktop_widgets.widget.desktop-widget-watermark.settings]
+        background = false
+        description = "Go to Settings to Activate Archlinux"
+        title = "Activate Archlinux"
