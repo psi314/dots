@@ -10,7 +10,7 @@ scale = 1.0
 thickness = 35
 start = [ "clock", "group:g2", "media" ]
 center = [ "group:g3" ]
-end = [ "control-center", "notifications", "clipboard", "network", "bluetooth", "volume", "brightness", "battery", "tray" ]
+end = [ "control-center", "notifications", "clipboard", "network", "bluetooth", "volume", "battery", "tray" ]
 
 [[bar.default.capsule_group]]
     fill = "surface_variant"
@@ -33,17 +33,6 @@ end = [ "control-center", "notifications", "clipboard", "network", "bluetooth", 
     members = [ "active_window", "workspaces" ]
     opacity = 0.0
     padding = 6.0
-
-[dock]
-auto_hide = true
-background_opacity = 1
-enabled = true
-icon_size = 32
-launcher_icon = "noctalia"
-launcher_position = "start"
-magnification = false
-pinned = [ "brave-origin", "anki", "org.kde.kdenlive", "kitty" ]
-show_dots = true
 
 [idle]
 behavior_order = [ "lock", "screen-off", "suspend" ]
@@ -68,9 +57,10 @@ avatar_path = "/home/pranjal/.face"
 polkit_agent = true
 settings_show_advanced = false
 telemetry_enabled = false
-font_family = "FiraCode Nerd Font"
+font_family = "Cascadia Code NF"
 password_style = "random"
-ui_scale = 1
+ui_scale = 1.00
+screen_time_enabled = true
 
     [shell.screenshot]
     directory = "/home/pranjal/Pictures/Screenshots"
@@ -78,13 +68,12 @@ ui_scale = 1
 [location]
 auto_locate = true
 
-[theme]
-builtin = "Catppuccin"
-wallpaper_scheme = "Catppuccin"
-
 [theme.templates]
-builtin_ids = [ "gtk3", "gtk4", "kitty", "kcolorscheme", "mango", "niri" ]
+builtin_ids = [ "gtk3", "gtk4", "kitty", "mango", "niri" ]
 enable_community_templates = false
+
+[plugins]
+enabled = [ "noctalia/example", "noctalia/screen_recorder", "noctalia/bongocat" ]
 
 [wallpaper]
 directory = "/home/pranjal/Pictures/walls"
@@ -101,6 +90,9 @@ scale = 1.25
 
 [widget.bluetooth]
 show_label = true
+
+[widget.control-center]
+custom_image = "/home/pranjal/Pictures/logos/ArchLinuxLogo.png"
 
 [widget.media]
 title_scroll = "always"
@@ -125,6 +117,8 @@ enabled = true
     name = "Calendar"
     type = "google"
 
+[nightlight]
+enabled = true
 
 [desktop_widgets]
 widget_order = [ "desktop-widget-watermark" ]
@@ -143,5 +137,6 @@ widget_order = [ "desktop-widget-watermark" ]
 
         [desktop_widgets.widget.desktop-widget-watermark.settings]
         background = false
+        shadow = false
         description = "Go to Settings to Activate Archlinux"
         title = "Activate Archlinux"
